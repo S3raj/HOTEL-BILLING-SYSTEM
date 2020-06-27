@@ -1,0 +1,101 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int choice;
+	int maharashtrianthali=0;
+	int punjabithali=0;
+	int chickenthali=0;
+	int nonvegthalideluxe=0;
+	int softdrinks=0;
+	double subTotal;
+	double tax;
+	double totalDue;
+	double tacoTotal=0;
+	double enchTotal=0;
+	double tamaTotal=0;
+	double nachTotal=0;
+	double drnkTotal=0;
+	
+	cout<<"			Welcome to Hotel Royal Inn"<<endl;
+	cout<<"Please continue to make all your selections by using the item number on the left"<<endl;
+	cout<<"When you are finished type 'E' to exit."<<endl;
+	cout<<endl;
+	cout<<"..................................MENU........................................"<<endl;
+	cout<<"Item# Description--------------------------------------------------------Price"<<endl;
+	cout<<"______________________________________________________________________________"<<endl;
+	cout<<"[1] Maharashtrain Thali (Veg):  2 Bhaji, 3 Chapati, Rice and Daal...............................100"<<endl;
+	cout<<endl;
+	cout<<"[2] Punjabi Thali:              2 Bhaji, 2 Naan , Rice and Daal, Lassi..........................125"<<endl;
+	cout<<endl;
+	cout<<"[3] Chicken Thali:              Chicken Gravy , Chicken Fry , 2 Chapati , Rice..................300"<<endl;
+	cout<<endl;
+	cout<<"[4] Non Veg Thali (Deluxe):     Chicken Gravy , Chicken Fry , Fish Fry, 2 Chapati , Rice........350"<<endl;
+	cout<<endl;
+	cout<<"[5] SOFT DRINKS                 Per Serving                ......................................50"<<endl;
+	cout<<endl;
+
+	while(choice=1||2||3||4||5){
+	cin>>choice;
+
+	switch (choice)
+	{
+	case 1:
+		maharashtrianthali=maharashtrianthali+1;
+		tacoTotal=maharashtrianthali*100;
+		break;
+	case 2:
+	punjabithali=punjabithali+1;
+		enchTotal=punjabithali*125;
+		break;
+	case 3:
+		chickenthali=chickenthali+1;
+		tamaTotal=chickenthali*300;
+		break;
+	case 4:
+	    nonvegthalideluxe=nonvegthalideluxe+1;
+		nachTotal=nonvegthalideluxe*350;
+		break;
+	case 5:
+	    softdrinks= softdrinks+1;
+		drnkTotal= softdrinks*50;
+		break;
+	default:
+		system("cls");
+		system("color E");
+		cout<<endl;
+		cout<<endl;
+		cout<<"You have ordered the following:"<<endl;
+		cout<<"___________________"<<endl;
+		if(maharashtrianthali!=0){
+			cout<<maharashtrianthali<<"   Maharashtrain Thali (Veg)    "<<tacoTotal<<endl;
+		}
+		if(punjabithali!=0){
+			cout<<punjabithali<<" Punjabi Thali     "<<enchTotal<<endl;
+		}
+		if(chickenthali!=0){
+			cout<<chickenthali<<" Chicken Thali     "<<tamaTotal<<endl;
+		}
+		if(nonvegthalideluxe!=0){
+			cout<<nonvegthalideluxe<<" Non Veg Thali (Deluxe)    "<<nachTotal<<endl;
+		}
+		if(softdrinks!=0){
+			cout<< softdrinks<<"     SOFT DRINKS       "<<drnkTotal<<endl;
+		}
+		cout<<fixed<<setprecision(2)<<endl;
+		cout<<"___________________"<<endl;
+		subTotal=(tacoTotal+enchTotal+tamaTotal+nachTotal+drnkTotal);
+		tax=(subTotal*.075);
+		totalDue=(subTotal+tax);
+		cout<<"Subtotal     "<<subTotal<<endl;
+		cout<<"Tax          "<<tax<<endl;
+		cout<<"___________________"<<endl;
+		cout<<"Total Due    "<<totalDue<<endl;
+	}
+	}
+		
+return 0;
+}
